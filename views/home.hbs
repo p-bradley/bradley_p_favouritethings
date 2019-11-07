@@ -4,14 +4,14 @@
 
         {{#each things}}
             <div class="user-panel">
-                <img class="u-avatar" src="images/{{ icon }}" alt="avatar">
+                <a class="u-link" href="{{ ID }}"><img class="u-avatar" src="images/{{ icon }}" alt="avatar"></a>
 
                 <a class="u-link" href="{{ ID }}">
-                    See More Info
+                    Click The Image (or here)
                 </a>
 
                 <h1>{{ name }}</h1>
-                <h3>{{ description }}</h3>
+                <p>{{ description }}</p>
             </div>
         {{/each}}
         

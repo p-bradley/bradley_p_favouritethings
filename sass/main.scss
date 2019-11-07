@@ -5,18 +5,27 @@
 
 body {
     color: $main-color;
-    background-color: $body-bg;
 }
 
-h1, h2, h3 { color: $heading-color }
+h1, h2, h3, h4, a { color: $heading-color; font-family: 'Lato', sans-serif; text-align: center; }
+
+p { font-family: 'Reem Kufi', sans-serif;}
 
 .panel { min-height: 60vh; }
 
 .panel:nth-child(odd) {
-    background-color: salmon;
+    background-color: white;
     color: white;
 }
 
 #to-top { position: fixed; bottom: 10px; right: 10px; display: none; }
+
+@media screen and (min-width: 1430px) {
+
+        h1 {
+            font-size: 50px !important;
+        }
+    
+    }
 
 @import 'modules/_footer'

@@ -5,26 +5,33 @@ const myVM = (() => {
     let userButtons = document.querySelectorAll('.u-link'),
         lightBox = document.querySelector('.lightbox');
 
-    // create the social media list
-    function renderSocialMedia(media) {
-        return `<ul class="u-social">
-                    ${media.map(item => `<li>${item}</li>`).join("")}
-                </ul>`
-    }
+    function parseUserData(things) {
+        let para1 = lightBox.querySelector('.para1'),
+        para2 = lightBox.querySelector('.para2'),
+        para3 = lightBox.querySelector('.images');
+      
 
-    function parseUserData(person) {
-        let targetDiv = lightBox.querySelector('.lb-content'),
-            targetImg = lightBox.querySelector('img');
-
-        let bioContent = `
-            <p>${person.bio}</p>
-            <h4>Social Media:</h4>
-            <!-- loop thru social media stuff here -->
-            ${renderSocialMedia(person.social)}
+        let bioContent1 = `
+        <img class="topImg" src="${things.Image1}">
+            
+            <p>${things.ParaPast}</p>
         `;
 
-        targetDiv.innerHTML = bioContent;
-        targetImg.src = person.currentSrc;
+        let bioContent2 = `
+           
+            <p>${things.ParaCurrent}</p>
+        `;
+
+        let bioContent3 = `
+           
+        <img class="botImg1" src="${things.Image2}">
+        <img class="botImg2" src="${things.Image3}">
+          
+        `;
+
+        para1.innerHTML = bioContent1;
+        para2.innerHTML = bioContent2;
+        para3.innerHTML = bioContent3;
 
         lightBox.classList.add('show-lb');
     }
@@ -33,8 +40,8 @@ const myVM = (() => {
         event.preventDefault();
         //debugger;
         // 1, 2, or 3 depending on which anchor tag you click
-        let url = `/${this.getAttribute('href')}`,
-            currentImg = this.previousElementSibling.getAttribute('src');
+        let url = `/${this.getAttribute('href')}`;
+            
 
         // this goes and fetches the database content (or an API endpoint)
         // that's why it's called a fetch!
@@ -43,7 +50,6 @@ const myVM = (() => {
             .then(data => {
                 console.log(data);
 
-                data.currentSrc = currentImg;
                 parseUserData(data);
             })
             .catch((err) => {

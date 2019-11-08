@@ -4,41 +4,110 @@
     flex-direction: row;
     min-height: 100vh;
     width: 100%;
-    position: fixed;
+    position: absolute;
     top: 0;
     z-index: 5000;
-    padding: 20px;
+    left: 0;
 
     background-color: rgba(0, 0,0, 0.85);
-
-    .sidebar {
-        flex: 1;
-    }
     
     .lb-content {
-        flex: 3;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        width: 93%;
     }
 
-    img { max-width: 250px; }
+    .para { 
 
-    .close {    
-        right: 24px;
+        margin-bottom: 25px;
+
+        p { 
+            max-width: 1200px;
+            width: 70%;
+            margin: 0 auto;
+            font-size: 18px;
+        }
+    }
+
+    .images { 
+        
+        display: flex; flex-direction: column;
+
+        img {
+        margin: 0 auto;
+        max-width: 400px; 
+        width: 95%; 
+        margin-bottom: 20px;
+    }
+}
+
+    
+
+    .topImg { max-width: 1200px; width: 95%; display: flex; margin: 0 auto; margin-bottom: 30px;}
+
+    .close { 
+        font-family: 'arial';
+        right: 30px;
         top: 10px;
         cursor: pointer;
         font-size: 2em;
         position: fixed;
-        border: thin solid white;
-        padding: 2px 14px 5px;
+        border: 2px solid red;
+        color: red;
+        padding: 4px 14px 6px 14px;
         border-radius: 50%;
-        background-color: rgba(255,255,255,0.25);
+        background-color: white;
     }
 }
 
 .show-lb { display: flex !important; }
 
-.u-social {
-    li { 
-        display: inline-block;
-        padding: 10px;
-    }
+@media screen and (min-width: 960px)
+
+{
+
+    .images { 
+        
+        display: flex; flex-direction: row !important;
+
+        img {
+            max-width: 700px !important; 
+            width: 80%; 
+        }
+
+
 }
+
+}
+
+@media screen and (min-width: 860px)
+
+{
+
+   .para {
+
+       p{
+           font-size: 20px !important;
+
+       }
+   }
+
+
+}
+
+@media screen and (min-width: 1100px)
+
+{
+
+   .para {
+
+       p{
+           font-size: 24px !important;
+
+       }
+   }
+
+
+}
+

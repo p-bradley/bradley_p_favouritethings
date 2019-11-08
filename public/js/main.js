@@ -3,7 +3,9 @@
 const myVM = (() => {
     // get the user buttons and fire off an async DB query with Fetch
     let userButtons = document.querySelectorAll('.u-link'),
-        lightBox = document.querySelector('.lightbox');
+        lightBox = document.querySelector('.lightbox'),
+        team = document.querySelector('.team'),
+        title = document.querySelector('.title');
 
     function parseUserData(things) {
         let para1 = lightBox.querySelector('.para1'),
@@ -34,6 +36,8 @@ const myVM = (() => {
         para3.innerHTML = bioContent3;
 
         lightBox.classList.add('show-lb');
+        team.classList.add('hidden');
+        title.classList.add('hidden');
     }
 
     function getUserData(event) {
@@ -62,5 +66,7 @@ const myVM = (() => {
     // wire up the lightbox close button
     lightBox.querySelector('.close').addEventListener("click", function() {
         lightBox.classList.remove('show-lb');
+        team.classList.remove('hidden');
+        title.classList.remove('hidden');
     });
 })();

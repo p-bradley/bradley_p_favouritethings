@@ -1,36 +1,77 @@
 .team { 
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-
+    flex-direction: column;
+    
     .user-panel {
-        flex: 0 1 200px;
+        flex: 0 1 31%;
         text-align: center;
         padding: 8px;
 
-        .u-avatar { max-width: 200px; }
+        .u-avatar { max-width: 400px; width: 70%; border: solid black 2px;}
 
-        .u-link { 
+        .u-link {
             display: block; 
             //width: 150px;  
             text-decoration: none;
+            text-transform: uppercase;
             margin: 0 auto;
-            background-color: rgba(255, 255, 255, 0.8);
             padding: 5px;
         }
 
-        h1, h3 { margin: 5px 0; }
+        h1 { margin: 5px 0; letter-spacing: 4px; }
+        p {
+            color: black;
+            font-size: 18px;
+            text-align: left;
+            max-width: 500px;
+            margin: 0 auto;
+        }
     }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 460px) {
     .team {
         .user-panel { 
-            flex: 1 1;
-
+            
             .u-avatar { max-width: 300px; }
         }
     }
 }
 
+
+@media screen and (min-width: 700px) {
+    .team {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        .user-panel {
+            flex: 0 1 40%;
+            p {
+                font-size: 20px;
+                max-width: 700px;
+        
+            }
+            .u-avatar { max-width: 500px; width: 100%; }
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .team {
+        .user-panel {
+            flex: 0 1 31%; 
+        }
+    }
+}
+
+@media screen and (min-width: 1430px) {
+    .team {
+        p {
+            font-size: 22px !important;
+    
+        }
+        .user-panel {
+            .u-avatar { max-width: 400px; width: 100%; }
+        }
+    }
+}
